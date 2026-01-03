@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maa Bhawani Construction & Mining</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --primary-dark: #0f172a;     /* Deep slate (background) */
+            --dark: #1e293b;             /* Darker sections */
+            --light-dark: #334155;       /* Cards */
+            --primary-green: #22c55e;     /* Fresh green accent (eco-friendly) */
+            --accent-green: #16a34a;      /* Darker green for hover */
+            --light-green: #bbf7d0;      /* Light background accents */
+            --text-light: #f1f5f9;       /* Main text */
+            --text-gray: #94a3b8;        /* Secondary text */
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header Styles */
+        header {
+            background-color: rgba(15, 23, 42, 0.95);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-icon {
+            background-color: var(--primary-green);
+            color: var(--primary-dark);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 800;
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .logo-text span {
+            color: var(--text-light);
+            font-weight: 300;
+            display: block;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        nav a:hover {
+            color: var(--primary-green);
+        }
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
+        }
+        nav a:hover:after {
+            width: 100%;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-green);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        /* Floating Icons */
+        .floating-icons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+        .floating-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-green);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        .floating-icon:hover {
+            transform: scale(1.1);
+            background-color: var(--accent-green);
+        }
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 120px;
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://m-mtoday.com/wp-content/uploads/sites/12/2024/07/sustainable-mining-1024x585.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero h1 span {
+            color: var(--primary-green);
+        }
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--text-gray);
+        }
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .secondary-button {
+            background-color: transparent;
+            color: var(--text-light);
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid var(--primary-green);
+        }
+        .secondary-button:hover {
+            background-color: var(--primary-green);
+            color: white;
+        }
+        /* Services Section */
+        .section {
+            padding: 100px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background: var(--primary-green);
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+        }
+        .section-title p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background-color: var(--light-dark);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(34, 197, 94, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(34, 197, 94, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+        .service-icon {
+            background-color: var(--primary-green);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px auto -35px;
+            font-size: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        .service-content {
+            padding: 40px 25px 30px;
+            text-align: center;
+            flex-grow: 1;
+            background-color: var(--light-dark);
+        }
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-green);
+        }
+        .service-content p {
+            color: var(--text-gray);
+        }
+        /* About Section */
+        .about {
+            background-color: var(--dark);
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-text h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--primary-green);
+        }
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-gray);
+        }
+        .about-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--primary-green);
+            display: block;
+        }
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background-color: var(--light-dark);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        .project-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        .project-content {
+            padding: 25px;
+        }
+        .project-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--primary-green);
+        }
+        .project-content p {
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+        /* Gallery for Cards & Videos */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        /* Contact Section */
+        .contact {
+            background-color: var(--dark);
+        }
+        .contact-info {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .contact-icon {
+            background-color: var(--primary-green);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 20px;
+        }
+        .contact-details h4 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: var(--primary-green);
+        }
+        /* Footer */
+        footer {
+            background-color: #0a0f1a;
+            padding: 70px 0 30px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+        .footer-column {
+            flex: 1;
+        }
+        .footer-column h4 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: var(--primary-green);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-column h4:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background: var(--primary-green);
+            left: 0;
+            bottom: 0;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: var(--primary-green);
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            background-color: var(--primary-green);
+            color: white;
+            transform: translateY(-5px);
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(34, 197, 94, 0.1);
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content { flex-direction: column; }
+            .footer-content { flex-wrap: wrap; gap: 40px; }
+            .footer-column { flex: 0 0 calc(50% - 20px); }
+        }
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .about-stats { flex-wrap: wrap; justify-content: center; }
+            .section { padding: 70px 0; }
+        }
+        @media (max-width: 576px) {
+            .footer-column { flex: 0 0 100%; }
+            .logo-text { font-size: 20px; }
+            .section-title h2 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Icons -->
+    <div class="floating-icons">
+        <a href="https://wa.me/919296174639" class="floating-icon" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:maabhawaniminingconstruction@gmail.com" class="floating-icon" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">MB</div>
+                <div class="logo-text">Maa Bhawani <span>Construction & Mining</span></div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Sustainable Mining & Construction with <span>Environmental Responsibility</span></h1>
+            <p>Maa Bhawani Construction & Mining delivers reliable mining, crushing, trading, and construction services while prioritizing land reclamation, safety, and eco-friendly practices.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="secondary-button">View Services</a>
+                <a href="#projects" class="secondary-button">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section - Added relevant images to each card -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We specialize in sustainable mining, crushing, trading, transportation, and construction material supply with a strong focus on environmental care.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://sunshineinfrasolutions.com/wp-content/uploads/2024/12/63529e9ba9917999b83cbd76_omega13_6fcd5aaee7f4e296d2ab54fb80253919_2000.jpeg" alt="Sustainable Stone Mining and Crushing Operation">
+                    </div>
+                    <div class="service-icon"><i class="fas fa-tools"></i></div>
+                    <div class="service-content">
+                        <h3>Mining, Crushing & Trading</h3>
+                        <p>Quartz, Quartzite, Aggregate, Bauxite, Iron Ore, Limestone, Coal, Dolomite, Stone Chips.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://i.ytimg.com/vi/Iyu_PoMMXEM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB8zhk44jBpTX-xX9jopu9uiHGnGw" alt="Hyva Tipper Trucks Transporting Stones">
+                    </div>
+                    <div class="service-icon"><i class="fas fa-truck"></i></div>
+                    <div class="service-content">
+                        <h3>Transportation Services</h3>
+                        <p>Reliable transport of minerals and materials across India and worldwide connectivity for Iron Ore, Bauxite, Coal trading.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://www.fluidconstructions.com/wp-content/uploads/2024/04/FC_Images_WBM-Road_Updation_2-1-1024x576.jpg" alt="Road Construction Stone Material Bedding Layer">
+                    </div>
+                    <div class="service-icon"><i class="fas fa-road"></i></div>
+                    <div class="service-content">
+                        <h3>Road Construction Support</h3>
+                        <p>Complete supply of stone materials up to bedding layer for road projects, ensuring quality and timely delivery.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://inhabitat.com/wp-content/blogs.dir/1/files/2022/03/pexels-tom-fisk-2101140-889x592.jpg" alt="Land Reclamation and Tree Planting After Mining">
+                    </div>
+                    <div class="service-icon"><i class="fas fa-leaf"></i></div>
+                    <div class="service-content">
+                        <h3>Environmental Management</h3>
+                        <p>Progressive land reclamation, tree planting, and sustainable practices in all operations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>With 14 years of experience, we are committed to responsible mining and construction that benefits communities and the environment.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>14 Years of Sustainable Excellence</h3>
+                    <p>Maa Bhawani Construction & Mining, led by Director Mr. Abhimanyu Kumar, operates multiple stone chip and bauxite sites across Jharkhand with full compliance and environmental focus.</p>
+                    <p>We own modern assets including Hyva, Poklane, Breaker, Wagon Drill, Loader, and Crusher for efficient, safe operations.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">14+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">9+</span>
+                            <span class="stat-label">Active Sites</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Global</span>
+                            <span class="stat-label">Trading Network</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://agincourtresources.com/wp-content/uploads/2025/08/reklamasi-bertahap-untuk-masa-depan-lestari-scaled.webp" alt="Sustainable Mining Reclamation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Projects & Sites</h2>
+                <p>Active mining and crushing operations with railway-approved materials and environmental safeguards.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://www.baichy.com/d/file/Industrial_news/2025-04-28/3dcf68b1a33b9d1f3c5f1cedebb307e7.jpg" alt="Stone Crushing Plant">
+                    </div>
+                    <div class="project-content">
+                        <h3>Stone Chips Sites</h3>
+                        <p>Halhu (Ranchi), Kalyanpur (Bokaro), Chandil (Saraikela), Panki Road (Latehar), Ormanjhi (Ranchi), Mahadevganj (Sahebganj - Railway Approved Boulder).</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_auto/ukgbc.org/wp-content/uploads/2023/09/GettyImages-679099076-1024x724.jpg" alt="Bauxite Mining">
+                    </div>
+                    <div class="project-content">
+                        <h3>Bauxite Mines</h3>
+                        <p>Guruguta, Netrahat. Sustainable extraction with reclamation.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://thumbs.dreamstime.com/b/rural-highway-expansion-balancing-nature-infrastructure-forest-road-construction-project-image-captures-dynamic-351214914.jpg" alt="Road Construction">
+                    </div>
+                    <div class="project-content">
+                        <h3>Construction & Trading</h3>
+                        <p>Iron Ore, Bauxite, Coal supply worldwide. Dolomite from Chhattisgarh available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gallery</h2>
+                <p>Photos of visiting card, address card, director, equipment, sites, and operational videos.</p>
+            </div>
+            <div class="gallery-grid">
+                <!-- Replace with your actual files -->
+                <div class="gallery-item">
+                    <img src="visiting-card.jpg" alt="Maa Bhawani Visiting Card">
+                </div>
+                <div class="gallery-item">
+                    <img src="address-card.jpg" alt="Address Card">
+                </div>
+                <div class="gallery-item">
+                    <img src="director-abhimanyu-kumar.jpg" alt="Director Mr. Abhimanyu Kumar">
+                </div>
+                <div class="gallery-item">
+                    <video controls>
+                        <source src="site-video1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="gallery-item">
+                    <video controls>
+                        <source src="crushing-operation.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="gallery-item">
+                    <img src="equipment-hyva.jpg" alt="Hyva & Equipment">
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Feel free to reach out via WhatsApp or Email for any inquiries.</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="contact-details">
+                        <h4>WhatsApp / Phone</h4>
+                        <p>+91 92961 74639</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <p>maabhawaniminingconstruction@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-user"></i></div>
+                    <div class="contact-details">
+                        <h4>Director</h4>
+                        <p>Mr. Abhimanyu Kumar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Maa Bhawani</h4>
+                    <p>Sustainable mining, crushing, trading, and construction services with environmental responsibility since 2011.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Mining & Crushing</a></li>
+                        <li><a href="#">Material Trading</a></li>
+                        <li><a href="#">Transportation</a></li>
+                        <li><a href="#">Road Construction Supply</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Maa Bhawani Construction & Mining. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            const navUl = nav.querySelector('ul');
+            if (navUl.style.display === 'flex') {
+                navUl.style.display = 'none';
+            } else {
+                navUl.style.display = 'flex';
+                navUl.style.flexDirection = 'column';
+                navUl.style.position = 'absolute';
+                navUl.style.top = '100%';
+                navUl.style.left = '0';
+                navUl.style.width = '100%';
+                navUl.style.backgroundColor = 'var(--primary-dark)';
+                navUl.style.padding = '20px';
+                navUl.style.gap = '20px';
+                navUl.style.borderTop = '1px solid rgba(34, 197, 94, 0.1)';
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    const navUl = document.querySelector('#mainNav ul');
+                    if(window.innerWidth <= 768 && navUl.style.display === 'flex') {
+                        navUl.style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
