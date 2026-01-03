@@ -392,6 +392,10 @@
         .gallery-item img {
             object-fit: cover;
         }
+        /* Hide title bar on hover */
+        .gallery-item iframe {
+            pointer-events: none; /* Disable mouse events to prevent title bar on hover */
+        }
         .contact {
             background-color: var(--dark);
         }
@@ -493,6 +497,27 @@
             color: var(--text-gray);
             font-size: 14px;
         }
+        .developer-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+        .developer-info a {
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+        .developer-info a:hover {
+            text-decoration: underline;
+        }
+        .developer-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            color: var(--primary-green);
+            font-size: 16px;
+        }
         @media (max-width: 992px) {
             .about-content { flex-direction: column; }
             .footer-content { flex-wrap: wrap; gap: 40px; }
@@ -518,10 +543,10 @@
 <body>
     <!-- Floating Icons -->
     <div class="floating-icons">
-        <a href="https://wa.me/919296174639" class="floating-icon" target="_blank" aria-label="WhatsApp">
+        <a href="https://wa.me/919296174639" class="floating-icon" target="_blank" aria-label="Company WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="mailto:maabhawaniminingconstruction@gmail.com" class="floating-icon" aria-label="Email">
+        <a href="mailto:maabhawaniminingconstruction@gmail.com" class="floating-icon" aria-label="Company Email">
             <i class="fas fa-envelope"></i>
         </a>
     </div>
@@ -561,7 +586,7 @@
         </div>
     </section>
 
-    <!-- Services Section (Pura wapas add kiya with images) -->
+    <!-- Services Section -->
     <section class="section" id="services">
         <div class="container">
             <div class="section-title">
@@ -613,7 +638,7 @@
         </div>
     </section>
 
-    <!-- About Section (Pura wapas) -->
+    <!-- About Section -->
     <section class="section about" id="about">
         <div class="container">
             <div class="section-title">
@@ -647,7 +672,7 @@
         </div>
     </section>
 
-    <!-- Projects Section (Pura wapas) -->
+    <!-- Projects Section -->
     <section class="section" id="projects">
         <div class="container">
             <div class="section-title">
@@ -686,7 +711,7 @@
         </div>
     </section>
 
-    <!-- Gallery Section (YouTube videos iframe se + 3 photos) -->
+    <!-- Gallery Section - Videos with title but no channel name on hover -->
     <section class="section" id="gallery">
         <div class="container">
             <div class="section-title">
@@ -705,27 +730,27 @@
                     <img src="https://raw.githubusercontent.com/rrkumar0726/maabhawaniconstructionandmining/refs/heads/main/WhatsApp%20Image%202026-01-02%20at%2011.50.21.jpeg" alt="Director Mr. Abhimanyu Kumar">
                 </div>
 
-                <!-- 7 YouTube Videos (iframe embed - ab play honge) -->
+                <!-- 7 YouTube Videos -->
                 <div class="gallery-item">
-                    <iframe src="https://www.youtube.com/embed/D0V0SDy91Xc" title="Video 1" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/D0V0SDy91Xc?rel=0" title="Site Operation Video" allowfullscreen></iframe>
                 </div>
                 <div class="gallery-item">
-                    <iframe src="https://www.youtube.com/embed/dB7qoN1cR14" title="Video 2" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/dB7qoN1cR14?rel=0" title="Site Operation Video" allowfullscreen></iframe>
                 </div>
                 <div class="gallery-item">
-                    <iframe src="https://www.youtube.com/embed/_J_9yv78gnk" title="Video 3" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/_J_9yv78gnk?rel=0" title="Site Operation Video" allowfullscreen></iframe>
                 </div>
                 <div class="gallery-item">
-                    <iframe src="https://www.youtube.com/embed/vlXvSrS6AhU" title="Video 4" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/vlXvSrS6AhU?rel=0" title="Site Operation Video" allowfullscreen></iframe>
                 </div>
                 <div class="gallery-item">
-                    <iframe src="https://www.youtube.com/embed/t5xtSII5aS8" title="Video 5" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/t5xtSII5aS8?rel=0" title="Site Operation Video" allowfullscreen></iframe>
                 </div>
                 <div class="gallery-item">
-                    <iframe src="https://www.youtube.com/embed/vHhxeZ9umhM" title="Video 6" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/vHhxeZ9umhM?rel=0" title="Site Operation Video" allowfullscreen></iframe>
                 </div>
                 <div class="gallery-item">
-                    <iframe src="https://www.youtube.com/embed/rJgkanPs0l0" title="Video 7" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/rJgkanPs0l0?rel=0" title="Site Operation Video" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -801,6 +826,14 @@
             </div>
             <div class="copyright">
                 <p>&copy; 2026 Maa Bhawani Mining & Construction. All Rights Reserved.</p>
+            </div>
+            <div class="developer-info">
+                Developed by <strong>Ram Ranjeet Kumar</strong><br>
+                <a href="https://www.linkedin.com/in/iamramranjeetkuamr/" target="_blank">LinkedIn Profile</a><br>
+                <div class="developer-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/919570084038" target="_blank">+91 95700 84038</a>
+                </div>
             </div>
         </div>
     </footer>
