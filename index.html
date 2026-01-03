@@ -373,10 +373,10 @@
             color: var(--text-gray);
             margin-bottom: 15px;
         }
-        /* Gallery for Cards & Videos */
+        /* Gallery Section - Updated for 7 videos + 3 photos */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
@@ -389,6 +389,10 @@
             width: 100%;
             height: auto;
             display: block;
+        }
+        .gallery-item video {
+            height: 400px;
+            object-fit: cover;
         }
         /* Contact Section */
         .contact {
@@ -507,11 +511,13 @@
             .hero-buttons { flex-direction: column; align-items: center; }
             .about-stats { flex-wrap: wrap; justify-content: center; }
             .section { padding: 70px 0; }
+            .gallery-item video { height: 300px; }
         }
         @media (max-width: 576px) {
             .footer-column { flex: 0 0 100%; }
             .logo-text { font-size: 20px; }
             .section-title h2 { font-size: 28px; }
+            .gallery-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -561,7 +567,7 @@
         </div>
     </section>
 
-    <!-- Services Section - Added relevant images to each card -->
+    <!-- Services Section -->
     <section class="section" id="services">
         <div class="container">
             <div class="section-title">
@@ -571,7 +577,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://sunshineinfrasolutions.com/wp-content/uploads/2024/12/63529e9ba9917999b83cbd76_omega13_6fcd5aaee7f4e296d2ab54fb80253919_2000.jpeg" alt="Sustainable Stone Mining and Crushing Operation">
+                        <img src="https://sunshineinfrasolutions.com/wp-content/uploads/2024/12/63529e9ba9917999b83cbd76_omega13_6fcd5aaee7f4e296d2ab54fb80253919_2000.jpeg" alt="Stone Mining and Crushing Operation">
                     </div>
                     <div class="service-icon"><i class="fas fa-tools"></i></div>
                     <div class="service-content">
@@ -581,7 +587,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://i.ytimg.com/vi/Iyu_PoMMXEM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB8zhk44jBpTX-xX9jopu9uiHGnGw" alt="Hyva Tipper Trucks Transporting Stones">
+                        <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1058237156492554" alt="Hyva Truck Transporting Stones">
                     </div>
                     <div class="service-icon"><i class="fas fa-truck"></i></div>
                     <div class="service-content">
@@ -591,7 +597,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://www.fluidconstructions.com/wp-content/uploads/2024/04/FC_Images_WBM-Road_Updation_2-1-1024x576.jpg" alt="Road Construction Stone Material Bedding Layer">
+                        <img src="https://www.shutterstock.com/image-photo/sub-base-layer-road-construction-600w-2562807199.jpg" alt="Road Construction Stone Bedding Layer">
                     </div>
                     <div class="service-icon"><i class="fas fa-road"></i></div>
                     <div class="service-content">
@@ -601,7 +607,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://inhabitat.com/wp-content/blogs.dir/1/files/2022/03/pexels-tom-fisk-2101140-889x592.jpg" alt="Land Reclamation and Tree Planting After Mining">
+                        <img src="https://imgs.mongabay.com/wp-content/uploads/sites/30/2021/04/01150139/eco-park.jpg" alt="Mining Land Reclamation and Tree Planting">
                     </div>
                     <div class="service-icon"><i class="fas fa-leaf"></i></div>
                     <div class="service-content">
@@ -666,7 +672,7 @@
                 </div>
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_auto/ukgbc.org/wp-content/uploads/2023/09/GettyImages-679099076-1024x724.jpg" alt="Bauxite Mining">
+                        <img src="https://www.savingiceland.org/wp-content/uploads/2010/08/awfulmining.jpg" alt="Bauxite Mining Site">
                     </div>
                     <div class="project-content">
                         <h3>Bauxite Mines</h3>
@@ -686,15 +692,15 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Gallery Section - Ab aap yaha apne 7 videos ke direct links aur 3 photos ke filenames daal sakte ho -->
     <section class="section" id="gallery">
         <div class="container">
             <div class="section-title">
                 <h2>Gallery</h2>
-                <p>Photos of visiting card, address card, director, equipment, sites, and operational videos.</p>
+                <p>Our site operations, equipment, visiting card, director photo, and videos. (Aap apne actual files upload karke names change kar dena)</p>
             </div>
             <div class="gallery-grid">
-                <!-- Replace with your actual files -->
+                <!-- 3 Photos - Yaha apne photos ke file names daalo (e.g., visiting-card.jpg) -->
                 <div class="gallery-item">
                     <img src="visiting-card.jpg" alt="Maa Bhawani Visiting Card">
                 </div>
@@ -704,22 +710,53 @@
                 <div class="gallery-item">
                     <img src="director-abhimanyu-kumar.jpg" alt="Director Mr. Abhimanyu Kumar">
                 </div>
+
+                <!-- 7 Videos - Yaha apne videos ke file names daalo (e.g., video1.mp4). Videos inline play honge with controls. -->
+                <!-- Agar video YouTube se hai to iframe use karo, lekin GitHub Pages ke liye direct .mp4 files best hain. -->
                 <div class="gallery-item">
-                    <video controls>
-                        <source src="site-video1.mp4" type="video/mp4">
+                    <video controls preload="metadata">
+                        <source src="video1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
                 <div class="gallery-item">
-                    <video controls>
-                        <source src="crushing-operation.mp4" type="video/mp4">
+                    <video controls preload="metadata">
+                        <source src="video2.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
                 <div class="gallery-item">
-                    <img src="equipment-hyva.jpg" alt="Hyva & Equipment">
+                    <video controls preload="metadata">
+                        <source src="video3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-                <!-- Add more items as needed -->
+                <div class="gallery-item">
+                    <video controls preload="metadata">
+                        <source src="video4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="gallery-item">
+                    <video controls preload="metadata">
+                        <source src="video5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="gallery-item">
+                    <video controls preload="metadata">
+                        <source src="video6.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="gallery-item">
+                    <video controls preload="metadata">
+                        <source src="video7.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Agar aur photos/videos add karne ho to extra div daal do -->
             </div>
         </div>
     </section>
